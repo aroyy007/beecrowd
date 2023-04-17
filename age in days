@@ -1,0 +1,29 @@
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    // Read input values
+    double A, B, C;
+
+    scanf("%lf %lf %lf", &A, &B, &C);
+
+    // Calculate discriminant
+    double d = B * B - 4 * A * C;
+
+    // Check if roots are possible to calculate
+    if (A == 0 || d < 0) {
+        printf("Impossivel calcular\n"); // Impossible to calculate
+    } else {
+        // Calculate roots
+        double sqrt_d = sqrt(d);
+        double R1 = (-B + sqrt_d) / (2 * A);
+        double R2 = (-B - sqrt_d) / (2 * A);
+
+        // Print roots
+        printf("R1 = %.5lf\n", R1);
+        printf("R2 = %.5lf\n", R2);
+    }
+
+    return 0;
+}
